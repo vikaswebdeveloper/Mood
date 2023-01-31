@@ -3,21 +3,21 @@ let masterPlay = document.getElementById("masterPlay");
 let myProgressBar = document.getElementById("Bar");
 let gif = document.getElementById('gif');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
-let audioElement = new Audio(`songs/${songIndex}.mp3`);
+let audioElement = new Audio(`${songIndex}.mp3`);
 let forward = document.getElementById('forward');
 let previous = document.getElementById('previous');
 
 let songs = [
-    { songName: "will be decided later", filePath: "songs/1.mp3", coverPath: "covers/1.jpg" },
-    { songName: "wiided later", filePath: "songs/2.mp3", coverPath: "covers/2.jpg" },
-    { songName: "will be decided later", filePath: "songs/3.mp3", coverPath: "covers/3.jpg" },
-    { songName: "will be df wecided later", filePath: "songs/4.mp3", coverPath: "covers/4.jpg" },
-    { songName: "will ided later", filePath: "songs/5.mp3", coverPath: "covers/5.jpg" },
-    { songName: "will be ater", filePath: "songs/6.mp3", coverPath: "covers/6.jpg" },
-    { songName: "will bter", filePath: "songs/7.mp3", coverPath: "covers/7.jpg" },
-    { songName: "will be deci v later", filePath: "songs/8.mp3", coverPath: "covers/8.jpg" },
-    { songName: "will  later", filePath: "songs/9.mp3", coverPath: "covers/9.jpg" },
-    { songName: "will be de later", filePath: "songs/10.mp3", coverPath: "covers/10.jpg" }
+    { songName: "will be decided later", filePath: "1.mp3", coverPath: "1.jpg" },
+    { songName: "wiided later", filePath: "2.mp3", coverPath: "2.jpg" },
+    { songName: "will be decided later", filePath: "3.mp3", coverPath: "3.jpg" },
+    { songName: "will be df wecided later", filePath: "4.mp3", coverPath: "4.jpg" },
+    { songName: "will ided later", filePath: "5.mp3", coverPath: "5.jpg" },
+    { songName: "will be ater", filePath: "6.mp3", coverPath: "6.jpg" },
+    { songName: "will bter", filePath: "7.mp3", coverPath: "7.jpg" },
+    { songName: "will be deci v later", filePath: "8.mp3", coverPath: "8.jpg" },
+    { songName: "will  later", filePath: "9.mp3", coverPath: "9.jpg" },
+    { songName: "will be de later", filePath: "10.mp3", coverPath: "10.jpg" }
 ]
 
 songItems.forEach((element, i) => {
@@ -69,7 +69,7 @@ Array.from(document.getElementsByClassName('mainSong')).forEach((element) => {
             songIndex = parseInt(e.target.id);
             e.target.classList.remove('fa-play');
             e.target.classList.add('fa-pause');
-            audioElement.src = `songs/${songIndex}.mp3`;
+            audioElement.src = `${songIndex}.mp3`;
             audioElement.currentTime = 0;
             audioElement.play();
             masterPlay.classList.remove('fa-play');
@@ -85,7 +85,7 @@ forward.addEventListener('click', () => {
     } else {
         songIndex += 1;
     }
-    audioElement.src = `songs/${songIndex}.mp3`;
+    audioElement.src = `${songIndex}.mp3`;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.add('fa-pause');
@@ -98,7 +98,7 @@ previous.addEventListener('click', () => {
     } else {
         songIndex -= 1;
     }
-    audioElement.src = `songs/${songIndex}.mp3`;
+    audioElement.src = `${songIndex}.mp3`;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-play');
